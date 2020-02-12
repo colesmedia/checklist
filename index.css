@@ -35,3 +35,25 @@ h1 {
   display: block;
   max-width: 300px;
 }
+
+ul, ol {
+  list-style-type: none;
+  padding-left: 18px;
+}
+
+li {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+input[type="checkbox"] {
+  margin: 2px 10px 0 0;
+  transform: scale(1.5);
+}
+
+input[type="checkbox"]:checked + div {
+  opacity: .3;
+} 
+
