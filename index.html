@@ -38,7 +38,10 @@
     <br>
     <ol>
       <li>
-        <input type="checkbox">
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
         <div>
           <b>Smärta: </b>
           lokalisation, utbredning, intensitet, karaktär, varaktighet?
@@ -46,7 +49,10 @@
       </li>
       <br>
       <li>
-        <input type="checkbox">
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
         <div>
           <b>Hud: </b>
           färg, fuktighet, sår?
@@ -54,7 +60,10 @@
       </li>
       <br>
       <li>
-        <input type="checkbox">
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
         <div>
           <b>Andning: </b>
           hosta, andningsbiljud, (t.ex. rossel, väsnande) andnöd, frekvens, djup, anstränging?
@@ -62,7 +71,10 @@
       </li>
       <br>
       <li>
-        <input type="checkbox">
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
         <div>
           <b>Cirkulation: </b>
           refelbundenhet, pulsfrekvens, blodtryck, temp?
@@ -70,7 +82,10 @@
       </li>
       <br>
       <li>
-        <input type="checkbox">
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
         <div>
           <b>Medvetande: </b>
           vakenhet, blodsocker, oro, kramper (typ och varaktighet), förlamningar?
@@ -78,7 +93,10 @@
       </li>
       <br>
       <li>
-        <input type="checkbox">
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
         <div>
           <b>Elimination: </b>
           <ul>
@@ -93,7 +111,10 @@
       </li>
       <br>
       <li>
-        <input type="checkbox">
+        <label class="checkbox-container">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
         <div>
           <b>Vid fall: </b>
           finns någon synlig skada?
@@ -101,4 +122,20 @@
       </li>
     </ol>
   </body>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        var checkedInputs = document.querySelectorAll("[type='checkbox']");
+        checkedInputs.forEach(function(input) {
+          input.addEventListener('click', function(e) {
+            var div = e.target.parentElement.nextElementSibling;
+            if (e.target.checked) {
+              div.classList.add('checked');
+            } else {
+              div.classList.remove('checked');
+            }
+          })
+        })
+    });
+  </script>
 </html>
